@@ -9,11 +9,9 @@
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/mdb.css">
     <link rel="stylesheet" href="css/style2.css">
+    <link rel="icon" href="img/logo.jpg">
 </head>
 <body>
-    <?php
-     echo 'test';
-    ?>
 <div class="cover">
     <div class="container smooth-scroll">
         <h1 class='animated slower pulse infinite'>Be Different And <span>Join Us</span></h1>
@@ -32,11 +30,21 @@
 <div class="card-body px-lg-5 pt-0">
 
   <!-- Form -->
-  <form class="text-left" style="color: #757575;" action="#!">
+  <form class="text-left" style="color: #757575;" action="data.php" method='post'>
+  <div class="md-form animated slower fadeInUp delay-3s">
+
+      <small id="materialRegisterFormPasswordHelpBlock" class="form-text text-muted mb-4">
+       - General Notes : <br>
+       * Fill The Form In Engish Please <br>
+       * Speical Characters Not Allowed Execpt [ @ , - , _ , . ] <br>
+       * Http Link Not Allowed
+      </small>
+
+    </div>
 
     <!-- Email -->
     <div class="md-form animated slower fadeInUp delay-3s">
-      <input type="text" id="materialLoginFormName" class="form-control" required>
+      <input type="text" id="materialLoginFormName" pattern='[a-z].{2,}' name='name' class="form-control" required>
       <label for="materialLoginFormEName">Name</label>
       <small id="materialRegisterFormPasswordHelpBlock" class="form-text text-muted mb-4">
        - Enter Your Full Name Without Any Special character Ex : Ahmed Mohamed
@@ -45,7 +53,7 @@
     </div>
 
     <div class="md-form animated slower fadeInUp delay-4s">
-        <input type="email" class="form-control" required>
+        <input type="email" class="form-control" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" name='mail' required>
         <label for="materialLoginFormEmail">E-Mail</label>
         <small id="materialRegisterFormPasswordHelpBlock" class="form-text text-muted mb-4">
        - Enter A Valid E-Mail Ex : Ahmed.123@gmail.com
@@ -53,7 +61,7 @@
 
     </div>
     <div class="md-form animated slower fadeInUp delay-5s">
-        <input id='phone' type="tel" pattern='[0-9]' class='form-control' maxlength='11' required>
+        <input id='phone' type="tel" pattern='[0-9]{11}' name='phone' class='form-control' maxlength='11' required>
         <label for="phone">Phone</label>
         <small id="materialRegisterFormPasswordHelpBlock" class="form-text text-muted mb-4">
        - Enter A Valid Phone Number Ex : 0101110002
@@ -61,48 +69,46 @@
 
     </div>
 
-    <select name='first[]' class="mdb-select md-form animated slower fadeInUp delay-5s" style='z-index:1225 !important'>
-      <option value="null" disabled selected>First Preference</option>
+    <select name='first[]' class="browser-default custom-select animated slower fadeInUp delay-5s" style='z-index:1225 !important' required>
+      <option value="" disabled selected>First Preference</option>
       <option value="talent">Talent Committee</option>
       <option value="markting">Markting Committee</option>
+      <option value="photo">Photography & video making</option>
+      <option value="Design">Design Committee</option>
+      <option value="Magazine">Magazine Committee</option>
+      <option value="project managment">Project Managment Committee</option>
       <option value="events">Events Committee</option>
       <option value="preformance">Perfoemance Committee</option>
       <option value="dcr">DCR Committee</option>
       <option value="it">IT Committee</option>
+      <option value="Mobile">Mobile application Committee</option>
+      <option value="ui">Ui/Ux Committee</option>
       <option value="jr robotics">Junior Robotics Committee</option>
   </select>
 
 
-  <select name='second[]' class="mdb-select md-form animated slower fadeInUp delay-5s" style='z-index:1225 !important'>
-      <option value="null" disabled selected>Second Preference</option>
+  <select name='second[]' class="browser-default custom-select animated slower fadeInUp delay-5s" style='z-index:1225 !important' required>
+  <option value="" disabled selected>Second Preference</option>
       <option value="talent">Talent Committee</option>
       <option value="markting">Markting Committee</option>
+      <option value="photo">Photography & video making</option>
+      <option value="Design">Design Committee</option>
+      <option value="Magazine">Magazine Committee</option>
+      <option value="project managment">Project Managment Committee</option>
       <option value="events">Events Committee</option>
       <option value="preformance">Perfoemance Committee</option>
       <option value="dcr">DCR Committee</option>
       <option value="it">IT Committee</option>
+      <option value="Mobile">Mobile application Committee</option>
+      <option value="ui">Ui/Ux Committee</option>
       <option value="jr robotics">Junior Robotics Committee</option>
   </select>
 
 
 
-    <!-- Password -->
-    <div class="md-form animated slower fadeInUp delay-5s">
-      <input type="text" id="comm" class="form-control">
-      <label for="comm">Comments</label>
-      <small id="materialRegisterFormPasswordHelpBlock" class="form-text text-muted mb-4">
-       - Put Your Comments Here
-      </small>
 
-    </div>
+    <button name='send' class="btn btn-danger btn-rounded btn-block my-4 waves-effect z-depth-0 animated slower fadeInUp delay-5s" type="submit">Send</button>
 
-
-    <!-- Sign in button -->
-    <button class="btn btn-danger btn-rounded btn-block my-4 waves-effect z-depth-0 animated slower fadeInUp delay-5s" type="submit">Send</button>
-
-    <!-- Register -->
-
-    <!-- Social login -->
   </form>
   <!-- Form -->
 
